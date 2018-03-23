@@ -9,7 +9,7 @@
 }
 
 .lava {
-  background: rgb(128,0,0);
+  background: rgb(128, 0, 0);
 }
 
 .wall {
@@ -17,11 +17,19 @@
 }
 
 .ground {
-  background: rgb(139,69,19);
+  background: rgb(139, 69, 19);
 }
 
 .floater {
   background: yellow;
+}
+
+.actor {
+  position: absolute;
+}
+
+.player {
+  background: white;
 }
 
 .game {
