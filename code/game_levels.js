@@ -7,15 +7,15 @@ var GAME_LEVELS = [
     "                                                                            ",
     "                                                                            ",
     "                                                                            ",
+    "                                                          y    y            ",
     "                                                                            ",
-    "                                                         y   y   y          ",
     "                                                                            ",
-    "                                                        xxxxxxxxxxx         ",
-    "                                                                            ",
-    "                                                                       xxxxx",
-    "                                                                       xzzzz",
-    "                    y   y        y     y     y                     xxxxxzzzz",
-    "  @                                                                xzzzzzzzz",
+    "                                                        xxxxxxxxx           ",
+    "                                                                   x        ",
+    "                                                                        xxxx",
+    "                   y     y       y     y     y                         xxzzz",
+    "                                                                    xxxxzzzz",
+    "  @                                                                xxzzzzzzz",
     "xxxxxxxxxxxx    xxxxxxxxxxxxx   xxx   xxx   xxx   xxxxxxxxxxxxxxxxxxzzzzzzzz",
     "zzzzzzzzzzzz!!!!zzzzzzzzzzzzz                     zzzzzzzzzzzzzzzzzzzzzzzzzz",
     "zzzzzzzzzzzzzzzzzzzzzzzzzzzzz!!!!!!!!!!!!!!!!!!!!!zzzzzzzzzzzzzzzzzzzzzzzzzz",
@@ -23,7 +23,7 @@ var GAME_LEVELS = [
     "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
     "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
     "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"],
-  ["                                      x!!x                        xxxxxxx                                    x!x  ",
+   ["                                      x!!x                        xxxxxxx                                    x!x  ",
     "                                      x!!x                     xxxx     xxxx                                 x!x  ",
     "                                      x!!xxxxxxxxxx           xx           xx                                x!x  ",
     "                                      xx!!!!!!!!!!xx         xx             xx                               x!x  ",
@@ -52,9 +52,8 @@ var GAME_LEVELS = [
     "!!!!x x!!!!!!x         x!!!!!x                     xx!!!!!!xx  !                     xxxxxxx                      ",
     "!!!!x x!!!!!!x         x!!!!!xx       xxxxxxxxxxxxxx!!!!!!xx   !                                                  ",
     "!!!!x x!!!!!!x         x!!!!!!xxxxxxxxx!!!!!!!!!!!!!!!!!!xx    !                                                  ",
-    "!!!!x x!!!!!!x         x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!xx     !                                                  "
-  ],
-  ["                                                                                                              ",
+    "!!!!x x!!!!!!x         x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!xx     !                                                  "],
+   ["                                                                                                              ",
     "                                                                                                              ",
     "                                                                                                              ",
     "                                                                                                              ",
@@ -100,9 +99,8 @@ var GAME_LEVELS = [
     "  x      @          x         x           x!!x    x!!!!x    x!!!!x    xx   xx                    x         x  ",
     "  xxxxxxxxxxxxxxxxxxxxxxxxxxxxx           xxxxxxxxxxxxxxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  ",
     "                                                                                                              ",
-    "                                                                                                              "
-  ],
-  ["                                                                                                  xxx x       ",
+    "                                                                                                              "],
+   ["                                                                                                  xxx x       ",
     "                                                                                                      x       ",
     "                                                                                                  xxxxx       ",
     "                                                                                                  x           ",
@@ -135,8 +133,7 @@ var GAME_LEVELS = [
     "        x=                  =                =x   x                     xxx                                   ",
     "        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   x!!!!!!!!!!!!!!!!!!!!!xxx!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
     "                                                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "                                                                                                              "
-  ]
+    "                                                                                                              "]
 ];
 
 if (typeof module != "undefined" && module.exports)
