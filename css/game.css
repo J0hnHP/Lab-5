@@ -3,7 +3,7 @@ body {
 }
 
 .background {
-  background: rgb(52, 166, 251);
+  background: linear-gradient(to bottom, #36d1dc, #5b86e5);
   table-layout: fixed;
   border-spacing: 0;
 }
@@ -13,7 +13,7 @@ body {
 }
 
 .lava {
-  background: rgb(128, 0, 0);
+  background: rgb(153, 0, 0);
 }
 
 .wall {
@@ -25,25 +25,70 @@ body {
   background: rgb(139, 69, 19);
 }
 
-.coin {
-  background: yellow;
-  border-radius: 10px;
-}
-
 .actor {
   position: absolute;
 }
 
+.floater {
+  background:rgba(255,255,255, 0.25);
+}
+
+.coin {
+  background-image: url("coin.gif");
+  background-size: 175%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.brick {
+  background-image: url("brick.png");
+  background-size: 175%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.enemy {
+  background-image: url("enemy.gif");
+  background-size: 200%;
+  background-position: center;
+}
+
 .player {
-  background: black;
+  background-image: url("player.gif");
+  background-size: 85px 40px;
+  background-position: center;
 }
 
 .game {
+  overflow: hidden;
+  max-width: 640px;
+  max-height: 480px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lost .player {
+  background-image: url("win.png");
+  background-size: 85px 40px;
+  background-position: center;
+}
+
+.won .player {
+  background-image: url("win.png");
+  background-size: 85px 40px;
+  background-position: center;
+}
+
+#head {
+  font-family: 'Jua', sans-serif;
+  color: white;
+  text-align: center;
 }
 
 #desc {
-color: white;
+  font-family: 'Jua', sans-serif;
+  color: white;
   text-align: center;
-font-size: 20px;
+  font-size: 15px;
 }
