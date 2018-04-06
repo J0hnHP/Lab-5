@@ -53,6 +53,18 @@ body {
   background-position: center;
 }
 
+.boss {
+  background-image: url("enemy.gif");
+  background-size: 200%;
+  background-position: center;
+}
+
+.powerup {
+  background-image: url("powerup.gif");
+  background-size: 200%;
+  background-position: center;
+}
+
 .player {
   background-image: url("player.gif");
   background-size: 85px 40px;
@@ -75,8 +87,8 @@ body {
 }
 
 .won .player {
-  background-image: url("win.png");
-  background-size: 85px 40px;
+  background-image: url("playerwin.gif");
+  background-size: auto;
   background-position: center;
 }
 
