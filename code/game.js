@@ -5,7 +5,9 @@ var actorChars = {
   "=": Lava,
   "|": Lava,
   "v": Lava,
-  "a": Enemy
+  "a": Enemy,
+  "b": Boss,
+  "p": Powerup,
 };
 
 function Level(plan) {
@@ -53,7 +55,8 @@ function Level(plan) {
         fieldType = "end";
       else if (ch == "c")
         fieldType = "brick";
-
+      else if (ch == "p")
+        fieldType = "powerup";
 
       // "Push" the fieldType, which is a string, onto the gridLine array (at the end).
       gridLine.push(fieldType);
@@ -106,6 +109,14 @@ function Coin(pos) {
 }
 Coin.prototype.type = "coin";
 
+function Powerup(pos) {
+  this.basePos = this.pos = pos.plus(new Vector(0.2, 0.1));
+  this.size = new Vector(0.75, 0.75);
+  // Make it go back and forth in a sine wave.
+  this.wobble = Math.random() * Math.PI * 2;
+}
+Powerup.prototype.type = "powerup";
+
 function Enemy(pos) {
   this.basePos = this.pos = pos.plus(new Vector(0.2, 0.1));
   this.size = new Vector(1, 1);
@@ -114,6 +125,13 @@ function Enemy(pos) {
 }
 Enemy.prototype.type = "enemy";
 
+function Boss(pos) {
+  this.basePos = this.pos = pos.plus(new Vector(0.2, 0.1));
+  this.size = new Vector(5, 5);
+  // Make it go back and forth in a sine wave.
+  this.wobble = Math.random() * Math.PI * 2;
+}
+Boss.prototype.type = "boss";
 // Lava is initialized based on the character, but otherwise has a
 // size and position
 function Lava(pos, ch) {
@@ -319,10 +337,22 @@ Coin.prototype.act = function(step) {
   this.pos = this.basePos.plus(new Vector(0, wobblePos));
 };
 
+Powerup.prototype.act = function(step) {
+  this.wobble += step * wobbleSpeed;
+  var wobblePos = Math.sin(this.wobble) * wobbleDist;
+  this.pos = this.basePos.plus(new Vector(0, wobblePos));
+};
+
 Enemy.prototype.act = function(step) {
   this.wobble += step * wobbleSpeed;
   var wobblePos = Math.sin(this.wobble) * wobbleDist;
   this.pos = this.basePos.plus(new Vector(wobblePos * 10, 0));
+};
+
+Boss.prototype.act = function(step) {
+  this.wobble += step * wobbleSpeed;
+  var wobblePos = Math.sin(this.wobble) * wobbleDist;
+  this.pos = this.basePos.plus(new Vector(0, wobblePos * 20));
 };
 
 var maxStep = 0.05;
@@ -391,6 +421,13 @@ Level.prototype.playerTouched = function(type, actor) {
   if (type == "lava" && this.status == null) {
     this.status = "lost";
     this.finishDelay = 1;
+  } else if (type == "powerup") {
+    this.actors = this.actors.filter(function(other) {
+      return other != actor;
+    });
+    for (var i = 0; i < 5; i++) {
+      playerXSpeed = 12;
+    }
   } else if (type == "enemy" && this.status == null) {
     this.status = "lost";
     this.finishDelay = 1;
